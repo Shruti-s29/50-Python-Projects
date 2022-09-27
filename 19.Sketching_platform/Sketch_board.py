@@ -31,13 +31,11 @@ def tilt_CCW():
 
 # main
 scr.listen()
-scr.onkey(fun=move_forward,key='Right')
-scr.onkey(fun=move_backward,key='Left')
+scr.onkey(fun=move_forward,key='Up')
+scr.onkey(fun=move_backward,key='Down')
 scr.onkey(fun=clear_canvas,key='c')
-scr.onkey(fun=tilt_CW,key="Up")
-scr.onkey(fun=tilt_CCW,key="Down")
-
-
+scr.onkey(fun=tilt_CW,key="Left")
+scr.onkey(fun=tilt_CCW,key="Right")
 
 #exit
 scr.exitonclick()
