@@ -15,7 +15,7 @@ scr.tracer(0)   # Doesn't show any procedure on screen untill update is called
 # main code
 
     #creating Snake body
-snk = snake()
+snk = Snake()
     # Food
 f = Food()
     # score show on screen S
