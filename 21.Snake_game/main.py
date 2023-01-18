@@ -18,8 +18,9 @@ scr.tracer(0)   # Doesn't show any procedure on screen untill update is called
 snk = snake()
     # Food
 f = Food()
-    # score show on screen 
+    # score show on screen S
 score = scoreboard()
+disp = Display()
     #reading the input from keyboard
 scr.listen()
     # onkey take argument as (what to do, when which key is pressed)
@@ -38,7 +39,7 @@ while game_is_onn:
     # collision with food
     if snk.head.distance(f) < 17:
         f.refresh()
-        snk.expand()
+        snk.extend()
         score.update_score()
 
     # breaking condition 
@@ -49,6 +50,8 @@ while game_is_onn:
         
      # collision with its own tail
     for seg in snk.segments[1:]:
+        if seg == snk.head:
+            pass
         if snk.head.distance(seg) < 5:
             game_is_onn = False
             score.game_over()

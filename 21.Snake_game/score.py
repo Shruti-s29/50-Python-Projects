@@ -1,5 +1,4 @@
-from turtle import Turtle
-
+from turtle import Turtle, position
 
 class scoreboard(Turtle):
     
@@ -23,3 +22,41 @@ class scoreboard(Turtle):
     def game_over(self):
         self.goto(0,0)
         self.write(arg='--GAME OVER--', align='center',font=('arial',18))
+
+class Display(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.color('white')
+        self.line()
+
+    def line(self):
+        self.penup()
+        # left margin
+        self.goto(-296,296)           
+        self.setheading(270)
+        while self.ycor()>=-296:
+            self.draw
+        #down margin
+        self.setheading(0)
+        while self.xcor()<=296:
+            self.draw
+
+        # right margin 
+        self.setheading(90)
+        while self.ycor()<=296:
+            self.draw
+        
+        #upper margin
+        self.setheading(180)
+        while self.xcor()>=-296:
+            self.draw
+
+    def draw(self):
+        self.pendown()
+        self.pencolor('red')
+        self.forward(10)
+
+
+
+        
+
