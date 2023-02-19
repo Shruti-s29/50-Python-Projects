@@ -19,7 +19,7 @@ while (True):
   # print(visited)
 
   ## dialog box
-  answer_input = scr.textinput(title = f'Score {score} out of {count} | Type exit to end |',prompt='Enter the name of State pointed on map (with red)- Ensure correct spelling')
+  answer_input = scr.textinput(title = f'Score {score} out of {count} | Type exit to end | Blue- Correct | Black- Wrong',prompt='Enter the name of State pointed on map (with red)- Ensure correct spelling')
   ans = answer_input.lower()
   scr.update()
   # print('ans -',ans)
@@ -53,3 +53,5 @@ while (True):
     tick = checkmark(ans)
     count +=1
   
+# final exit
+scr.bye()

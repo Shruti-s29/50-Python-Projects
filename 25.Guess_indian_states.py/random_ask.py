@@ -17,7 +17,7 @@ dict_state = {'state': ['ladakh', 'jammu & kashmir', 'himachal pradesh',
  19.0, 136.0, 113.0, 149.0, 111.0, 81.0, 44.0, 47.0, 89.0, 31.0, -35.0, 
  -21.0, -109.0, -198.0, -273.0, -313.0, -220.0, -181.0, -81.0, 5.0, 27.0, 115.0, 158.0]}
 
-abbreviation_states = [0, ['jammu and kashmir','j&k','j and k','jammu & kashmir'], ['himachal pradesh','hp'],
+abbreviation_states = [0, ['jammu and kashmir','j&k','j and k','jammu & kashmir','jk'], ['himachal pradesh','hp'],
  0, ['uttarakhand','uk'], 0, ['uttar pradesh','up'], 0, ['west bengal','bengal','wb'], 
  0, 0, ['arunachal pradesh','ap'], 0, 0, 0, 
  0, 0, 0, 0, 0, 0,['andhra pradesh','ap'], 0, 0, 0, 0, 0,
