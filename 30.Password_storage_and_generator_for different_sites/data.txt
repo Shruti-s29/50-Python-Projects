@@ -1,0 +1,3 @@
+---- Here all the password data will be stored as text file ----
+
+sample_website | sample_username | sample_password
