@@ -4,6 +4,7 @@ for a safer environment. UI will be build through tkinter module in python.
 from tkinter import *
 import random as r
 from tkinter import messagebox
+import json
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def pass_generator():
     inp3.delete(0,END)
@@ -31,16 +32,43 @@ def save():
     website = inp1.get()
     username = inp2.get()
     pss = inp3.get()
+    new_data = {
+        website:{
+        'username' : username,
+        'password' : pss
+        }
+    }
     if website =="" or username=="" or pss=="" :
         messagebox.showwarning(title='Warning',message=" Don't leave any field Empty")
     else:
         is_okk = messagebox.askokcancel(title="Details Entered -",message=f'Website : {website} \n Username : {username} \n Password : {pss}')
         if is_okk:
-            with open('data.txt','a') as data_file:
-                data_file.write(f'{website} | {username} | {pss}\n')
-                inp1.delete(0,END)
-                inp2.delete(0,END)
-                inp3.delete(0,END)
+                ## previous technique
+            # with open('data.txt','a') as data_file:
+            #     data_file.write(f'{website} | {username} | {pss}\n')
+              ## implementing exception handling
+
+            # Exception if intially File doesn't exist
+            try:
+                with open('data.json','r') as data_file:
+                    # reading previous data
+                    data = json.load(data_file)
+
+            except FileNotFoundError:
+                with open('data.json','w') as data_file:
+                    # saving data
+                    json.dump(new_data,data_file,indent=4)
+
+            else:
+                # updating data
+                data.update(new_data)
+                with open('data.json','w') as data_file:
+                    # saving data
+                    json.dump(data,data_file,indent=4)
+            
+            inp1.delete(0,END)
+            inp2.delete(0,END)
+            inp3.delete(0,END)
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
