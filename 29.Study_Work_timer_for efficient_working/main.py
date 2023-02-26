@@ -45,10 +45,11 @@ def start_timer():
 def countdown(count):
     time_mins = count//60
     time_secs = count%60
-    if time_mins<60:
+    if time_mins<1:
         time_mins ='0 0'
     if time_secs <10:
         time_secs = f'0{time_secs}'
+    
     cnv.itemconfig(timer_text,text=f'{time_mins}   {time_secs}')
     
     if count>0:
